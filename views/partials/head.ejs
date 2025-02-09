@@ -27,6 +27,12 @@
 
           <% if(user){  %>
             <li class="nav-item">
+              <a class="nav-link" href="/users/<%= user._id %>/trips/new">Add Trip</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/users/<%= user._id %>/trips">View Trip</a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link" href="/auth/sign-out">Sign out</a>
             </li>
             <% } else { %> 
@@ -37,9 +43,6 @@
             <a class="nav-link" href="/auth/sign-in">Sign In</a>
           </li>
           <% } %>
-          <li class="nav-item">
-            <a class="nav-link" href="/vip-lounge">VIP Lounge</a>
-          </li>
         </ul>
 
       </div>

@@ -62,6 +62,7 @@ const pagesCtrl = require('./controllers/pages');
 const authCtrl = require('./controllers/auth');
 const exp = require("constants");
 const vipCtrl = require('./controllers/vip');
+const tripCtrl = require('./controllers/trips')
 
 
 //-----------------------------------------------------
@@ -80,7 +81,24 @@ app.post("/auth/sign-in", authCtrl.signIn);
 
 app.get('/auth/sign-out', authCtrl.signOut);
 
-app.get("/vip-lounge", isSignedIn, vipCtrl.welcome);
+// routes
+app.use(isSignedIn);
+
+app.get('/users/:userId/trips', tripCtrl.index); // show or view all the applications
+
+app.get('/users/:userId/trips/new', tripCtrl.newTrip); // view new 
+
+app.post("/users/:userId/trips", tripCtrl.createTrip); // posting a new trip plan
+
+
+
+
+// app.delete('/users/:userId/foods/:itemId', foodsCtrl.deleteFood)
+
+// app.get('/users/:userId/foods/:foodId/edit', foodsCtrl.editFood)
+
+// app.put('/users/:userId/foods/:foodId', foodsCtrl.updateFood)
+
 
 //-----------------------------------------------------
 app.listen(port, () => {
