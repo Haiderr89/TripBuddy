@@ -1,0 +1,15 @@
+<%- include('../partials/head') %>
+
+<h1>Editing <%= trip.country %></h1>
+
+<div class="container">
+  <form action="/users/<%= user._id %>/trips/<%= trip._id %>?_method=PUT" method="POST">
+    <label for="name">Food:</label>
+    <input type="text" id="name" name="name" value="<%= trip.country %>">
+
+    <br>
+    <button type="submit" class="btn btn-primary">Update</button>
+  </form>
+</div>
+
+<%- include('../partials/footer') %>

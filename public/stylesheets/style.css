@@ -23,16 +23,31 @@ form{
     max-width: 40vw;
 }
 
-form button{
+/* form button{
     margin-top: 10px;
     background-color: lightblue;
     border-radius: 10px;
-}
+} */
 
 form button:hover{
     margin-top: 10px;
     background-color: lightslategray;
 }
 
+.card-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    /* justify-content: space-around; */
+}
 
+.card{
+    margin: 10px;
+}
 
+.btns {
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px; /* Adds space between buttons */
+}

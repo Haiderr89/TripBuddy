@@ -1,24 +1,36 @@
 <%- include('../partials/head') %>
 <div class="container">
+  <h1>Your Trip Plans</h1> <br>
 
-<h1>Your Trip Plans</h1> <br>
+  <div class="card-container">
+    <% trips.forEach(trip => { %>
+    <div class="card" style="width: 18rem;">
+      <img class="card-img-top" src="<%= trip.image %>" alt="Image of the country added">
+      <div class="card-body">
+        <h5 class="card-title"><%= trip.country %></h5>
+        <p class="card-text"><%= trip.description %></p>
 
-    <div class="card-container">
-        <% trips.forEach(trip => { %>
+        <% if (trip.rating >= 4) { %>
+        <span class="badge bg-success">&#9733; <%= trip.rating %></span>
+        <% } else if (trip.rating >= 3) { %>
+        <span class="badge bg-warning">&#9733; <%= trip.rating %></span>
+        <% } else { %>
+        <span class="badge bg-danger">&#9733; <%= trip.rating %></span>
+        <% } %>
 
+        <br><br>
 
-            <div class="card" style="width: 18rem;">
-                <img class="card-img-top" src="<%= trip.image  %>" alt="Image of the country added">
-                <div class="card-body">
-                  <h5 class="card-title"><%= trip.country %></h5>
-                  <p class="card-text"><%= trip.description %></p>
-                  <a href="#" class="btn btn-primary">Show more!</a>
-                </div>
-              </div>
+        <div class="btns">
+        <a href="/users/<%= user._id %>/trips/<%= trip._id %>/show" class="btn btn-primary">Show more!</a>
+
+        <form action="/users/<%= user._id %>/trips/<%= trip._id %>?_method=DELETE" method="POST" class="d-inline">
+          <button type="submit" class="btn btn-danger">Delete</button>
+        </form>
         </div>
-        <% }) %>
-        
+
+      </div>
     </div>
-    
+    <% }) %>
+  </div>
 </div>
 <%- include('../partials/footer') %>

@@ -41,7 +41,7 @@ const show = async (req, res) => {
     try {
         const currentUser = await User.findById(req.params.userId)
         const trip = currentUser.trips.id(req.params.tripId)
-        res.render('trips/index.ejs', {
+        res.render('trips/show.ejs', {
             title: trip.title,
             trip: trip,
         })
@@ -51,6 +51,33 @@ const show = async (req, res) => {
     }
 }
 
+const deleteTrip = async (req, res) => {
+    try {
+        const currentUser = await User.findById(req.params.userId)
+        currentUser.trips.id(req.params.tripId).deleteOne();
+        await currentUser.save();
+        res.redirect(`/users/${currentUser._id}/trips`)
+
+    } catch (error) {
+        console.log(error);
+        res.redirect('/')
+    }
+}
+
+
+const editTrip = async (req, res) => {
+    try {
+        const currentUser = await User.findById(req.params.userId)
+        const trip = currentUser.trips.id(req.params.tripId)
+        res.render('trips/edit.ejs', {
+            title: trip.title,
+            trip,
+        })
+    } catch (err) {
+        console.log(err)
+        res.redirect('/')
+    }
+}
 
 
 
@@ -60,5 +87,7 @@ module.exports = {
     createTrip,
     index,
     show,
+    deleteTrip,
+    editTrip,
 
 }

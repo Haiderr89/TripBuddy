@@ -90,12 +90,11 @@ app.get('/users/:userId/trips/new', tripCtrl.newTrip); // view new
 
 app.post("/users/:userId/trips", tripCtrl.createTrip); // posting a new trip plan
 
+app.get('/users/:userId/trips/:tripId/show', tripCtrl.show); // view new 
 
+app.delete('/users/:userId/trips/:tripId', tripCtrl.deleteTrip);
 
-
-// app.delete('/users/:userId/foods/:itemId', foodsCtrl.deleteFood)
-
-// app.get('/users/:userId/foods/:foodId/edit', foodsCtrl.editFood)
+app.get('/users/:userId/trips/:tripId/edit', tripCtrl.editTrip);
 
 // app.put('/users/:userId/foods/:foodId', foodsCtrl.updateFood)
 
