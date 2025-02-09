@@ -2,28 +2,46 @@
 
 <div class="container">
     <h1>Add a New Application</h1>
-    <form action="/users/<%= user._id %>/applications" method="POST">
-        <label for="">Company:</label>
-        <input type="text" name="company">
+    <form action="/users/<%= user._id %>/trips" method="POST">
 
-        <label for="">Title:</label>
-        <input type="text" name="title">
-
-        <label for="">Notes:</label>
-        <textarea name="notes"></textarea>
-
-        <label for="">Posting Link:</label>
-        <input type="text" name="postingLink">
+        <label for="">Country:</label>
+        <input type="text" name="country">
 
         <label for="">Status:</label>
         <select name="status">
             <option value="" selected disabled></option>
-            <option value="interested">Interested</option>
-            <option value="applied">Applied</option>
-            <option value="interviewing">Interviewing</option>
-            <option value="rejected">Rejected</option>
-            <option value="accepted">Accepted</option>
+            <option value="Visited">Visited</option>
+            <option value="Want to visit">Want to visit</option>
         </select>
+
+        <label for="">Rating (Between 0 - 5):</label>
+        <input type="text" name="rating">
+
+        <label for="">Image URL:</label>
+        <input type="text" name="image">
+
+        <label for="">Activities:</label>
+        <input type="text" name="activities">
+
+        <label for="">Best Season:</label>
+        <select name="bestSeason">
+            <option value="" selected disabled></option>
+            <option value="Spring">Spring</option>
+            <option value="Summer">Summer</option>
+            <option value="Fall">Fall</option>
+            <option value="Winter">Winter</option>
+        </select>
+
+        <label for="">Budget:</label>
+        <select name="budget">
+            <option value="" selected disabled></option>
+            <option value="High">High</option>
+            <option value="Medium">Medium</option>
+            <option value="Low">Low</option>
+        </select>
+
+        <label for="">Notes:</label>
+        <textarea name="description"></textarea>
 
         <button type="submit">Add Application</button>
 

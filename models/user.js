@@ -13,6 +13,8 @@ const tripSchema = new mongoose.Schema({
   },
   rating: {
     type: Number,
+    min: 0,
+    max: 5,
     required: true,
   },
   image: {
@@ -20,10 +22,10 @@ const tripSchema = new mongoose.Schema({
   },
   activities: {
     type: String,
-    enum: [''],
   },
   bestSeason: {
     type: String,
+    enum: ['Spring', 'Summer', 'Fall', 'Winter' ],
   },
   budget: {
     type: String,

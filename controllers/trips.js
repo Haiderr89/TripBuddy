@@ -37,6 +37,20 @@ const createTrip = async (req, res) => {
 
 }
 
+const show = async (req, res) => {
+    try {
+        const currentUser = await User.findById(req.params.userId)
+        const trip = currentUser.trips.id(req.params.tripId)
+        res.render('trips/index.ejs', {
+            title: trip.title,
+            trip: trip,
+        })
+    } catch (error) {
+        console.log(error);
+        res.redirect('/')
+    }
+}
+
 
 
 
@@ -45,5 +59,6 @@ module.exports = {
     newTrip,
     createTrip,
     index,
+    show,
 
 }
