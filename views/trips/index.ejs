@@ -10,22 +10,22 @@
         <h5 class="card-title"><%= trip.country %></h5>
         <p class="card-text"><%= trip.description %></p>
 
-        <% if (trip.rating >= 4) { %>
-        <span class="badge bg-success">&#9733; <%= trip.rating %></span>
-        <% } else if (trip.rating >= 3) { %>
-        <span class="badge bg-warning">&#9733; <%= trip.rating %></span>
-        <% } else { %>
-        <span class="badge bg-danger">&#9733; <%= trip.rating %></span>
-        <% } %>
+        <div class="rate">
+          <% if (trip.rating) { %> 
+            <% if (trip.rating >= 4) { %>
+              <span class="badge bg-success">&#9733; <%= trip.rating %></span>
+            <% } else if (trip.rating >= 3) { %>
+              <span class="badge bg-warning">&#9733; <%= trip.rating %></span>
+            <% } else { %>
+              <span class="badge bg-danger">&#9733; <%= trip.rating %></span>
+            <% } %>
+          <% } %>
+        </div>        
 
         <br><br>
 
         <div class="btns">
         <a href="/users/<%= user._id %>/trips/<%= trip._id %>/show" class="btn btn-primary">Show more!</a>
-
-        <form action="/users/<%= user._id %>/trips/<%= trip._id %>?_method=DELETE" method="POST" class="d-inline">
-          <button type="submit" class="btn btn-danger">Delete</button>
-        </form>
         </div>
 
       </div>

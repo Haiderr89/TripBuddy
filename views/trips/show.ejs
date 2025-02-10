@@ -2,5 +2,28 @@
 
 <h1>Details</h1>
 
-<a href="/users/<%= user._id %>/trips/<%= trip._id %>/edit">click me</a>
+<div class="container">
+  <div class="card mt-3" style="width: 40vw;">
+    <img src="<%= trip.image %>" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title"><%= trip.budget %></h5>
+      <p class="card-text"> <%= trip.country  %></p>
+
+    <br>
+    <div class="btns">
+        <a href="/users/<%= user._id %>/trips/<%= trip._id %>/edit" class="btn btn-primary">Edit Trip Details</a>
+    
+        <form action="/users/<%= user._id %>/trips/<%= trip._id %>?_method=DELETE" method="POST" class="d-inline">
+          <button type="submit" class="btn btn-danger">Delete</button>
+        </form>
+        </div>
+    </div>
+    
+  </div>
+  
+</div>
+
+<br><br>
+
+
 <%- include('../partials/footer') %>

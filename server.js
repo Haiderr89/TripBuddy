@@ -96,7 +96,7 @@ app.delete('/users/:userId/trips/:tripId', tripCtrl.deleteTrip);
 
 app.get('/users/:userId/trips/:tripId/edit', tripCtrl.editTrip);
 
-// app.put('/users/:userId/foods/:foodId', foodsCtrl.updateFood)
+app.put('/users/:userId/trips/:tripId', tripCtrl.updateTrip);
 
 
 //-----------------------------------------------------

@@ -4,11 +4,47 @@
 
 <div class="container">
   <form action="/users/<%= user._id %>/trips/<%= trip._id %>?_method=PUT" method="POST">
-    <label for="name">Food:</label>
-    <input type="text" id="name" name="name" value="<%= trip.country %>">
 
-    <br>
-    <button type="submit" class="btn btn-primary">Update</button>
+    <label for="">Country:</label>
+    <input type="text" id="name" name="country" value="<%= trip.country %>">
+
+        <label for="">Status:</label>
+        <select name="status" value="<%= trip.status %>">
+            <option value="Visited">Visited</option>
+            <option value="Want to visit">Want to visit</option>
+        </select>
+
+        <label for="">Rating (Between 0 - 5):</label>
+        <input type="text" name="rating" value="<%= trip.rating %>">
+
+        <label for="">Image URL:</label>
+        <input type="text" name="image" value="<%= trip.image %>">
+
+        <label for="">Activities:</label>
+        <input type="text" name="activities" value="<%= trip.activities %>">
+
+        <label for="">Best Season:</label>
+        <select name="bestSeason" value="<%= trip.bestSeason %>" >
+            <option value="Spring">Spring</option>
+            <option value="Summer">Summer</option>
+            <option value="Fall">Fall</option>
+            <option value="Winter">Winter</option>
+        </select>
+
+        <label for="">Budget:</label>
+        <select name="budget" value="<%= trip.budget %>">
+            <option value="High">High</option>
+            <option value="Medium">Medium</option>
+            <option value="Low">Low</option>
+        </select>
+
+        <label for="">Notes:</label>
+        <textarea name="description" value="<%= trip.description %>"></textarea>
+        <br>
+
+        
+        <button type="submit" class="btn btn-primary">Update!</button>
+
   </form>
 </div>
 

@@ -29,10 +29,10 @@ form{
     border-radius: 10px;
 } */
 
-form button:hover{
+/* form button:hover{
     margin-top: 10px;
     background-color: lightslategray;
-}
+} */
 
 .card-container{
     display: flex;
@@ -50,4 +50,16 @@ form button:hover{
     flex-direction: row;
     align-items: center;
     gap: 10px; /* Adds space between buttons */
+}
+
+
+/* .rate{
+    display: flex;
+    justify-content: flex-end;
+} */
+
+.card-img-top {
+    width: 100%; /* Ensures the image fits the card */
+    height: 200px; /* Set a fixed height */
+    object-fit: cover; /* Crops the image while maintaining aspect ratio */
 }
