@@ -1,8 +1,42 @@
 <%- include('partials/head') %>
-<% if(user) {%>
-<h1>Welcome to the App <%= user.username %>!</h1>
-<% } else { %>
-    <h1>Welcome to the App guest.</h1>
-    <% } %>
+
+<div class="carousel-container">
+  <% if(user) { %>
+    <h1 class="welcome-text">Welcome to <span class="name">TripBuddy</span> <%= user.username %>!</h1>
+  <% } else { %>
+    <h1 class="welcome-text">Welcome to TripBuddy guest.</h1>
+  <% } %>
+
+  <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+      <ol class="carousel-indicators">
+          <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"></li>
+          <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"></li>
+          <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner">
+          <div class="carousel-item active">
+              <div class="carousel-image-container">
+                  <img class="d-block w-100" src="https://images.pexels.com/photos/35600/road-sun-rays-path.jpg?cs=srgb&dl=pexels-pixabay-35600.jpg&fm=jpg" alt="First image for the home page" style="height: 100vh; object-fit: cover;  filter: brightness(50%);">
+              </div>
+          </div>
+          <div class="carousel-item">
+              <div class="carousel-image-container">
+                  <img class="d-block w-100" src="https://www.hdwallpapers.in/download/wood_bridge_between_green_trees_branches_forest_nature_background_4k_hd_nature-3840x2160.jpg" alt="Second image for the home page" style="height: 100vh; object-fit: cover; filter: brightness(50%);">
+              </div>
+          </div>
+          <div class="carousel-item">
+              <div class="carousel-image-container">
+                  <img class="d-block w-100" src="https://images.squarespace-cdn.com/content/v1/55f8575fe4b0b275dd96426f/1699746384745-EL3VAOOI2N6GO9U23IC0/Allure_DSC9441+WEB.jpg" alt="Third image for the home page" style="height: 100vh; object-fit: cover; filter: brightness(50%);">
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <div class="carousel-caption fixed-caption">
+      <h4>Discover the Beauty of the World!</h4> <br>
+      <a href="/users/<%= user._id %>/trips/new" class="btn btn-danger">Add Plan &rarr;</a>
+
+  </div>
+</div>
 
 <%- include('partials/footer') %>

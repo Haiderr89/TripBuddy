@@ -1,51 +1,91 @@
 <%- include('../partials/head') %>
 
-<div class="container">
-    <h1>Add a New Application</h1>
-    <form action="/users/<%= user._id %>/trips" method="POST">
+<body class="containerNew">
 
-        <label for="">Country:</label>
-        <input type="text" name="country">
+  <div class="container">
 
-        <label for="">Status:</label>
-        <select name="status">
-            <option value="" selected disabled></option>
-            <option value="Visited">Visited</option>
-            <option value="Want to visit">Want to visit</option>
-        </select>
+    <br><br><br>
 
-        <label for="">Rating (Between 0 - 5):</label>
-        <input type="text" name="rating">
+    <div class="image">
 
-        <label for="">Image URL:</label>
-        <input type="text" name="image">
+      <form action="/users/<%= user._id %>/trips" method="POST">
 
-        <label for="">Activities:</label>
-        <input type="text" name="activities">
 
-        <label for="">Best Season:</label>
-        <select name="bestSeason">
-            <option value="" selected disabled></option>
-            <option value="Spring">Spring</option>
-            <option value="Summer">Summer</option>
-            <option value="Fall">Fall</option>
-            <option value="Winter">Winter</option>
-        </select>
+        <h1 class="mb-4">Add a New Application</h1>
 
-        <label for="">Budget:</label>
-        <select name="budget">
-            <option value="" selected disabled></option>
-            <option value="High">High</option>
-            <option value="Medium">Medium</option>
-            <option value="Low">Low</option>
-        </select>
+        <div class="mb-3 w-50 div1">
+          <div>
 
-        <label for="">Notes:</label>
-        <textarea name="description"></textarea>
-<br>
-        <button type="submit" class="btn btn-primary">Add Application</button>
-    </form>
+            <label class="form-label">Country:</label>
+            <input type="text" name="country" class="form-control" required id="country">
+          </div>
 
-</div>
+          <div>
+            <label class="form-label">Rating (Between 0 - 5):</label>
+            <input type="number" name="rating" class="form-control" min="0" max="5" step="0.1">
+          </div>
+        </div>
+
+
+        <div class="mb-3 w-50">
+            <div>
+                <label class="form-label">Activities:</label>
+                <input type="text" name="activities" class="form-control">
+              </div>
+
+
+        </div>
+
+        <div class="mb-3 w-50 ">
+          <label class="form-label">Image URL:</label>
+          <input type="url" name="image" class="form-control">
+        </div>
+
+        <div class="mb-3 w-50 div1">
+
+          <div>
+            <label class="form-label">Best Season:</label>
+            <select name="bestSeason" class="form-select">
+              <option value="" selected disabled>Select season</option>
+              <option value="Spring">Spring</option>
+              <option value="Summer">Summer</option>
+              <option value="Fall">Fall</option>
+              <option value="Winter">Winter</option>
+            </select>
+          </div>
+          <div>
+            <label class="form-label">Status:</label>
+            <select name="status" class="form-select" required>
+              <option value="" selected disabled>Select status</option>
+              <option value="Visited">Visited</option>
+              <option value="Want to visit">Want to visit</option>
+            </select>
+
+          </div>
+          <div>
+
+
+            <label class="form-label">Budget:</label>
+            <select name="budget" class="form-select">
+              <option value="" selected disabled>Select budget</option>
+              <option value="High">High</option>
+              <option value="Medium">Medium</option>
+              <option value="Low">Low</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="mb-3 w-50">
+          <label class="form-label">Notes:</label>
+          <textarea name="description" class="form-control" rows="3"></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-danger">Add Application</button>
+        <br>
+      </form>
+    </div>
+  </div>
+
+</body>
 
 <%- include('../partials/footer') %>

@@ -1,51 +1,89 @@
 <%- include('../partials/head') %>
 
-<h1>Editing <%= trip.country %></h1>
+<body class="containerNew">
 
-<div class="container">
-  <form action="/users/<%= user._id %>/trips/<%= trip._id %>?_method=PUT" method="POST">
+  <div class="container">
+<br><br><br>
+    <div class="image">
 
-    <label for="">Country:</label>
-    <input type="text" id="name" name="country" value="<%= trip.country %>">
+        <form action="/users/<%= user._id %>/trips/<%= trip._id %>?_method=PUT" method="POST">
 
-        <label for="">Status:</label>
-        <select name="status" value="<%= trip.status %>">
-            <option value="Visited">Visited</option>
-            <option value="Want to visit">Want to visit</option>
-        </select>
 
-        <label for="">Rating (Between 0 - 5):</label>
-        <input type="text" name="rating" value="<%= trip.rating %>">
+        <h1 class="mb-4">Editing <%= trip.country %></h1>
 
-        <label for="">Image URL:</label>
-        <input type="text" name="image" value="<%= trip.image %>">
+        <div class="mb-3 w-50 div1">
+          <div>
 
-        <label for="">Activities:</label>
-        <input type="text" name="activities" value="<%= trip.activities %>">
+            <label class="form-label">Country:</label>
+            <input type="text" name="country" class="form-control" required id="country" value="<%= trip.country %>">
+          </div>
 
-        <label for="">Best Season:</label>
-        <select name="bestSeason" value="<%= trip.bestSeason %>" >
-            <option value="Spring">Spring</option>
-            <option value="Summer">Summer</option>
-            <option value="Fall">Fall</option>
-            <option value="Winter">Winter</option>
-        </select>
+          <div>
+            <label class="form-label">Rating (Between 0 - 5):</label>
+            <input type="number" name="rating" class="form-control" min="0" max="5" step="0.1" value="<%= trip.rating %>">
+          </div>
+        </div>
 
-        <label for="">Budget:</label>
-        <select name="budget" value="<%= trip.budget %>">
-            <option value="High">High</option>
-            <option value="Medium">Medium</option>
-            <option value="Low">Low</option>
-        </select>
 
-        <label for="">Notes:</label>
-        <textarea name="description" value="<%= trip.description %>"></textarea>
+        <div class="mb-3 w-50">
+            <div>
+                <label class="form-label">Activities:</label>
+                <input type="text" name="activities" class="form-control" value="<%= trip.activities %>">
+              </div>
+
+
+        </div>
+
+        <div class="mb-3 w-50 ">
+          <label class="form-label">Image URL:</label>
+          <input type="url" name="image" class="form-control" value="<%= trip.image %>">
+        </div>
+
+        <div class="mb-3 w-50 div1">
+
+          <div>
+            <label class="form-label">Best Season:</label>
+            <select name="bestSeason" class="form-select">
+              <option value="" selected disabled value="<%= trip.bestSeason %>">Select season</option>
+              <option value="Spring">Spring</option>
+              <option value="Summer">Summer</option>
+              <option value="Fall">Fall</option>
+              <option value="Winter">Winter</option>
+            </select>
+          </div>
+          <div>
+            <label class="form-label">Status:</label>
+            <select name="status" class="form-select" required>
+              <option value="" selected disabled value="<%= trip.status %>">Select status</option>
+              <option value="Visited">Visited</option>
+              <option value="Want to visit">Want to visit</option>
+            </select>
+
+          </div>
+          <div>
+
+
+            <label class="form-label">Budget:</label>
+            <select name="budget" class="form-select">
+              <option value="" selected disabled value="<%= trip.budget%>">Select budget</option>
+              <option value="High">High</option>
+              <option value="Medium">Medium</option>
+              <option value="Low">Low</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="mb-3 w-50">
+          <label class="form-label">Notes:</label>
+          <textarea name="description" class="form-control" rows="3" value="<%= trip.description %>"></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-secondary">Update!</button>
         <br>
+      </form>
+    </div>
+  </div>
 
-        
-        <button type="submit" class="btn btn-primary">Update!</button>
-
-  </form>
-</div>
+</body>
 
 <%- include('../partials/footer') %>
