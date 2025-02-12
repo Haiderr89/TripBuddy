@@ -1,6 +1,21 @@
 <%- include('../partials/head') %>
 <body class="indexView">
+  <div class="bgImg">
 
+  </div>
+  <style>
+    .bgImg{
+    background: linear-gradient( rgba(0, 0, 0, 0.501), rgba(0, 0, 0, 0.501) ), url('https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dHJhdmVsJTIwd2FsbHBhcGVyfGVufDB8fDB8fHww');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    z-index: -1;
+    /* filter: blur(8px);
+    -webkit-filter: blur(4px); */
+}
+  </style>
 <div class="container">
 
   <br><br><br>
@@ -8,11 +23,16 @@
 
   <div class="card-container">
     <% trips.forEach(trip => { %>
-    <div class="card" style="width: 18rem; max-height: 40vh;">
+      <a href="/users/<%= user._id %>/trips/<%= trip._id %>/show">
+    <div class="card" style="width: 18rem; max-height: 60vh;">
       <img class="card-img-top" src="<%= trip.image %>" alt="Image of the country added">
       <div class="card-body">
-        <h5 class="card-title"><%= trip.country %></h5>
-        <p class="card-text"><%= trip.description %></p>
+        <h3 class="card-title"><strong><%= trip.country %></strong></h3>
+        <br>
+        <p class="card-text"><strong>Best Season:</strong> <%= trip.bestSeason %></p>
+        <p class="card-text"><strong><%= trip.budget %></strong> budget needed  </p>
+        <p class="card-text"><strong><%= trip.status %></strong></p>
+
 
         <div class="rate">
           <% if (trip.rating) { %> 
@@ -23,17 +43,20 @@
             <% } else { %>
               <span class="badge bg-danger">&#9733; <%= trip.rating %></span>
             <% } %>
+          <% } else { %>
+            <span class="badge bg-secondary">&#9733;</span>
           <% } %>
-        </div>        <br>
-
-        <div class="btns">
-        <a href="/users/<%= user._id %>/trips/<%= trip._id %>/show" class="btn btn-primary">Show more!</a>
         </div>
+             
+
+
 
       </div>
     </div>
+  </a>
     <% }) %>
   </div>
 </div>
 </body>
 <%- include('../partials/footer') %>
+

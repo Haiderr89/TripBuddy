@@ -40,37 +40,36 @@
         </div>
 
         <div class="mb-3 w-50 div1">
-
           <div>
             <label class="form-label">Best Season:</label>
             <select name="bestSeason" class="form-select">
-              <option value="" selected disabled value="<%= trip.bestSeason %>">Select season</option>
-              <option value="Spring">Spring</option>
-              <option value="Summer">Summer</option>
-              <option value="Fall">Fall</option>
-              <option value="Winter">Winter</option>
+              <option value="" disabled>Select season</option>
+              <option value="Spring" <%= trip.bestSeason === 'Spring' ? 'selected' : '' %>>Spring</option>
+              <option value="Summer" <%= trip.bestSeason === 'Summer' ? 'selected' : '' %>>Summer</option>
+              <option value="Fall" <%= trip.bestSeason === 'Fall' ? 'selected' : '' %>>Fall</option>
+              <option value="Winter" <%= trip.bestSeason === 'Winter' ? 'selected' : '' %>>Winter</option>
             </select>
           </div>
+          
           <div>
             <label class="form-label">Status:</label>
             <select name="status" class="form-select" required>
-              <option value="" selected disabled value="<%= trip.status %>">Select status</option>
-              <option value="Visited">Visited</option>
-              <option value="Want to visit">Want to visit</option>
+              <option value="" disabled>Select status</option>
+              <option value="Visited" <%= trip.status === 'Visited' ? 'selected' : '' %>>Visited</option>
+              <option value="Want to visit" <%= trip.status === 'Want to visit' ? 'selected' : '' %>>Want to visit</option>
             </select>
-
           </div>
+          
           <div>
-
-
             <label class="form-label">Budget:</label>
             <select name="budget" class="form-select">
-              <option value="" selected disabled value="<%= trip.budget%>">Select budget</option>
-              <option value="High">High</option>
-              <option value="Medium">Medium</option>
-              <option value="Low">Low</option>
+              <option value="" disabled>Select budget</option>
+              <option value="High" <%= trip.budget === 'High' ? 'selected' : '' %>>High</option>
+              <option value="Medium" <%= trip.budget === 'Medium' ? 'selected' : '' %>>Medium</option>
+              <option value="Low" <%= trip.budget === 'Low' ? 'selected' : '' %>>Low</option>
             </select>
           </div>
+          
         </div>
 
         <div class="mb-3 w-50">
@@ -78,11 +77,17 @@
           <textarea name="description" class="form-control" rows="3" value="<%= trip.description %>"></textarea>
         </div>
 
-        <button type="submit" class="btn btn-secondary">Update!</button>
+        <button type="submit" class="btn btn-warning">Update!</button>
+        <br>
+        <a href="/users/<%= user._id %>/trips" class="btn btn-secondary">Back</a>
+
+       
         <br>
       </form>
     </div>
+    
   </div>
+  
 
 </body>
 

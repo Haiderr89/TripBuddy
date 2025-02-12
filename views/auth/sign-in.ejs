@@ -1,17 +1,29 @@
 <%- include('../partials/head') %>
 
-<h1>Sign in to your account!</h1>
-<form action="/auth/sign-in" method="POST" class="container">
 
-<label for="">Username: </label>
-<input for="" name="username" >
+<div class="divBox1">
+    <div class="sign">
+        <div class="signIn">
+            <h1>Sign in to your account!</h1>
+        </div>
+    <form action="/auth/sign-in" method="POST" class="container">
+    
+    <label for="">Username: </label>
+    <input for="" name="username" >
+    
+    <label for="" >Password: </label>
+    <input for="" name="password" type="password">
+    
+    <button type="submit">Sign in</button>
+    
+    <p> <%= msg %> </p>
+    </form>
+    </div>
+</div>
 
-<label for="" >Password: </label>
-<input for="" name="password" type="password">
+<div class="divBox2">
+    <img src="https://media.licdn.com/dms/image/v2/D5612AQEyq4S3oQs9jg/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1721196859976?e=2147483647&v=beta&t=d3ljmrHpf5ieLu6iLWW8F3xDLEPtaREqQvC1QiRxY7Y" alt="This image contain welcome image to website">
+</div>
 
-<button type="submit">Sign in</button>
-
-<p> <%= msg %> </p>
-</form>
 
 <%- include('../partials/footer') %>

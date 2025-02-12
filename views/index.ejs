@@ -34,8 +34,9 @@
 
   <div class="carousel-caption fixed-caption">
       <h4>Discover the Beauty of the World!</h4> <br>
+      <% if(user) { %>
       <a href="/users/<%= user._id %>/trips/new" class="btn btn-danger">Add Plan &rarr;</a>
-
+      <% }%>
   </div>
 </div>
 
