@@ -1,28 +1,33 @@
 <%- include('../partials/head') %>
 
+<div class="whole">
 
+    <div class="divBox2">
+        <img src="https://hassellfreeadventures.com/wp-content/uploads/2024/09/faq.png" width="400px" alt="This image contain welcome image to website">
+    </div>
+    
 <div class="divBox1">
     <div class="sign">
         <div class="signIn">
-            <h1>Sign in to your account!</h1>
+            <h1>Sign in to your account!</h1><br><br>
         </div>
     <form action="/auth/sign-in" method="POST" class="container">
     
     <label for="">Username: </label>
-    <input for="" name="username" >
+    <input for="" name="username" class="form-control" placeholder="Username"><br><br>
     
     <label for="" >Password: </label>
-    <input for="" name="password" type="password">
+    <input for="" name="password" type="password" class="form-control" placeholder="Password"><br><br>
     
-    <button type="submit">Sign in</button>
+    <button type="submit" class="btn btn-custom">Sign in</button>
     
     <p> <%= msg %> </p>
     </form>
     </div>
 </div>
 
-<div class="divBox2">
-    <img src="https://media.licdn.com/dms/image/v2/D5612AQEyq4S3oQs9jg/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1721196859976?e=2147483647&v=beta&t=d3ljmrHpf5ieLu6iLWW8F3xDLEPtaREqQvC1QiRxY7Y" alt="This image contain welcome image to website">
+
+
 </div>
 
 

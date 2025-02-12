@@ -1,20 +1,39 @@
 <%- include('../partials/head') %>
 
-<h1>Create a new account!</h1>
-<form action="/auth/sign-up" method="POST" class="container">
+<div class="whole">
 
-<label for="">Username: </label>
-<input for="" name="username" >
+    <div class="divBox2">
+        <img src="https://hassellfreeadventures.com/wp-content/uploads/2024/09/faq.png" width="400px" alt="This image contain welcome image to website">
+    </div>
+    
+<div class="divBox1">
+    <div class="sign">
+        <div class="signIn">
+            <h1>Create a new account!</h1><br><br>
+        </div>
+        <form action="/auth/sign-up" method="POST" class="container">
+    
+            <label for="">Username: </label>
+            <input for="" name="username" class="form-control" placeholder="Username" ><br>
+            
+            <label for="" >Password: </label>
+            <input for="" name="password" type="password" class="form-control" placeholder="Password"><br>
+            
+            
+            <label for="" >Confirm Password: </label>
+            <input for="" name="confirmPassword" type="password" class="form-control" placeholder="Confirm password"><br>
+            
+            <button type="submit" class="btn btn-custom">Sign in</button>
+            
+            <p> <%= msg %> </p>
+            </form>
+    </div>
+</div>
 
-<label for="" >Password: </label>
-<input for="" name="password" type="password">
 
 
-<label for="" >Confirm Password: </label>
-<input for="" name="confirmPassword" type="password">
+</div>
 
-<button type="submit">Submit</button>
 
-<p> <%= msg %> </p>
-</form>
+
 <%- include('../partials/footer') %>
