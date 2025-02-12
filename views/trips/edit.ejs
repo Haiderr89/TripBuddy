@@ -74,12 +74,12 @@
 
         <div class="mb-3 w-50">
           <label class="form-label">Notes:</label>
-          <textarea name="description" class="form-control" rows="3" value="<%= trip.description %>"></textarea>
-        </div>
+          <textarea name="description" class="form-control" rows="3"><%= trip.description %></textarea>
+        </div>        
 
         <button type="submit" class="btn btn-warning">Update!</button>
         <br>
-        <a href="/users/<%= user._id %>/trips" class="btn btn-secondary">Back</a>
+        <a href="/users/<%= user._id %>/trips/show" class="btn btn-secondary">Back</a>
 
        
         <br>
