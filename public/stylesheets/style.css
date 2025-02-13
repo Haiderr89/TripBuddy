@@ -143,8 +143,8 @@ max-height: 20vh;
 
 .indexView {
     position: relative;
-    background-image: url('https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dHJhdmVsJTIwd2FsbHBhcGVyfGVufDB8fDB8fHww');
-    background-repeat: no-repeat;
+    background:linear-gradient( rgba(0, 0, 0, 0.501), rgba(0, 0, 0, 0.501) ), url('https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dHJhdmVsJTIwd2FsbHBhcGVyfGVufDB8fDB8fHww');
+    /* background-repeat: no-repeat; */
     background-size: cover;
     background-position: center;
     color: white; 
@@ -156,7 +156,7 @@ max-height: 20vh;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 100;
     background: rgba(0, 0, 0, 0.5); 
     z-index: -1; 
 }
