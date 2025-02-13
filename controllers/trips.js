@@ -20,10 +20,7 @@ const newTrip = (req, res) => {
 }
 
 const createTrip = async (req, res) => {
-    // we can use any of both
-    // user id = req.params.userId
-    // user id = req.session.user._id
-    //---------------
+
     try {
         const currentUser = await User.findById(req.params.userId)
 

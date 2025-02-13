@@ -86,17 +86,17 @@ app.use(isSignedIn);
 
 app.get('/users/:userId/trips', tripCtrl.index); // show or view all the applications
 
-app.get('/users/:userId/trips/new', tripCtrl.newTrip); // view new 
+app.get('/users/:userId/trips/new', tripCtrl.newTrip); // view new page 
 
 app.post("/users/:userId/trips", tripCtrl.createTrip); // posting a new trip plan
 
-app.get('/users/:userId/trips/:tripId/show', tripCtrl.show); // view new 
+app.get('/users/:userId/trips/:tripId/show', tripCtrl.show); // view trip details
 
-app.delete('/users/:userId/trips/:tripId', tripCtrl.deleteTrip);
+app.delete('/users/:userId/trips/:tripId', tripCtrl.deleteTrip); // delete trip
 
-app.get('/users/:userId/trips/:tripId/edit', tripCtrl.editTrip);
+app.get('/users/:userId/trips/:tripId/edit', tripCtrl.editTrip); // edit trip
 
-app.put('/users/:userId/trips/:tripId', tripCtrl.updateTrip);
+app.put('/users/:userId/trips/:tripId', tripCtrl.updateTrip); // update trip
 
 
 //-----------------------------------------------------
