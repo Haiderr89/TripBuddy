@@ -33,7 +33,7 @@ The ***TripBuddy*** Website is a user-friendly platform for creating and managin
 * Bootstrap
 * EJS
 
-##### Front End
+##### Backend End
 * Express js
 * Node js
 * MongoDB
